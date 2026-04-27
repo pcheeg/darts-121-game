@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0f172a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="121 Ladder">
+  <title>121 Ladder Challenge</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Darts Checkout Practice</p>
+        <h1>121 Ladder Challenge</h1>
+      </div>
+      <div class="status-pill" id="runStatus">Live Run</div>
+    </header>
+
+    <main>
+      <section id="playScreen" class="screen active" aria-labelledby="playTitle">
+        <div class="score-card">
+          <p id="playTitle" class="label">Current Checkout</p>
+          <div id="scoreDisplay" class="score-display" aria-live="polite">121</div>
+          <p id="scoreMessage" class="score-message">Start at 121. Hit it to climb.</p>
+        </div>
+
+        <div class="mini-stats">
+          <div class="stat-tile">
+            <span>All-time best</span>
+            <strong id="bestScore">121</strong>
+          </div>
+          <div class="stat-tile">
+            <span>Total runs</span>
+            <strong id="totalRuns">0</strong>
+          </div>
+          <div class="stat-tile">
+            <span>Today’s best</span>
+            <strong id="todayBest">121</strong>
+          </div>
+        </div>
+
+        <div class="action-grid">
+          <button id="hitBtn" class="btn primary">Hit Checkout</button>
+          <button id="missBtn" class="btn danger">Missed Checkout</button>
+          <button id="undoBtn" class="btn secondary">Undo</button>
+          <button id="newRunBtn" class="btn ghost">New Run</button>
+        </div>
+      </section>
+
+      <section id="statsScreen" class="screen" aria-labelledby="statsTitle">
+        <div class="section-heading">
+          <p class="eyebrow">Performance</p>
+          <h2 id="statsTitle">Stats</h2>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-tile"><span>Total runs played</span><strong id="statsTotalRuns">0</strong></div>
+          <div class="stat-tile"><span>Best score reached</span><strong id="statsBestScore">121</strong></div>
+          <div class="stat-tile"><span>Today’s best score</span><strong id="statsTodayBest">121</strong></div>
+          <div class="stat-tile"><span>Average score reached</span><strong id="statsAverage">0</strong></div>
+          <div class="stat-tile wide"><span>Completed ladders to 170</span><strong id="statsCompleted">0</strong></div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Score</th>
+                <th>Attempts</th>
+                <th>Hits</th>
+                <th>Misses</th>
+                <th>Success %</th>
+              </tr>
+            </thead>
+            <tbody id="statsTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="settingsScreen" class="screen" aria-labelledby="settingsTitle">
+        <div class="section-heading">
+          <p class="eyebrow">Control Room</p>
+          <h2 id="settingsTitle">Settings</h2>
+        </div>
+
+        <div class="settings-card">
+          <h3>Data</h3>
+          <p>Reset all saved runs, current progress, and score history on this device.</p>
+          <button id="resetBtn" class="btn danger full">Reset All Data</button>
+        </div>
+
+        <div class="settings-card">
+          <h3>App</h3>
+          <p>Version <strong>1.0.0</strong></p>
+          <p class="small">Works offline after the first load. Built for GitHub Pages and local use.</p>
+        </div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Main navigation">
+      <button class="nav-btn active" data-screen="playScreen">Play</button>
+      <button class="nav-btn" data-screen="statsScreen">Stats</button>
+      <button class="nav-btn" data-screen="settingsScreen">Settings</button>
+    </nav>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
